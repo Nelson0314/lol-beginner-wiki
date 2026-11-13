@@ -1,7 +1,7 @@
 ---
 title: 英雄聯盟新手 Wiki 索引
 ---
-主題：英雄聯盟新手入門（召喚峽谷 5v5）。對象：完全沒玩過 MOBA 的人。撰寫規則見 [CLAUDE.md](../CLAUDE.md)，流程紀錄見 [log.md](log.md)。
+主題：英雄聯盟新手入門（召喚峽谷 5v5）。對象：完全沒玩過 MOBA 的人。撰寫規則見 [CLAUDE.md](../CLAUDE.md)，流程圖見 [workflow.html](../workflow.html)，流程紀錄見 [log.md](log.md)。
 
 ## 概念
 - [遊戲是什麼、怎樣算贏](concepts/game-goal.md)：摧毀對方主堡即獲勝。

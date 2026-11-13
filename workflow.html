@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workflow 流程圖</title>
+<style>
+:root{--bg:#f6f5f1;--panel:#fff;--ink:#1d1f24;--muted:#5d6370;--line:#cfcabd;--accent:#2f6fd0;--red:#c0392b;--gold:#a8741a;--green:#2e8b57;--soft:#eef3fb}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15171c;--panel:#1e2129;--ink:#e8e9ec;--muted:#a3a9b6;--line:#3b404d;--accent:#6ea0ff;--red:#ff7b6b;--gold:#e0b45a;--green:#5fc28b;--soft:#232a38}}
+:root[data-theme="dark"]{--bg:#15171c;--panel:#1e2129;--ink:#e8e9ec;--muted:#a3a9b6;--line:#3b404d;--accent:#6ea0ff;--red:#ff7b6b;--gold:#e0b45a;--green:#5fc28b;--soft:#232a38}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.7}
+.wrap{max-width:1240px;margin:0 auto;padding:20px 16px 50px}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+header a{color:var(--accent);text-decoration:none;font-weight:600}
+h1{font-size:28px;margin:10px 0 4px}
+.sub{color:var(--muted);margin:0 0 16px}
+.fig{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;overflow-x:auto}
+svg{display:block;width:100%;min-width:900px;height:auto}
+svg text{font-family:inherit;fill:var(--ink)}
+.node rect{fill:var(--soft);stroke:var(--accent);stroke-width:2}
+.chk polygon{fill:var(--panel);stroke:var(--red);stroke-width:2.5}
+.k{font-size:15px;font-weight:700}
+.t{font-size:13px;fill:var(--muted)}
+.hw{font-size:13px;font-weight:700;fill:var(--gold)}
+.fwd{stroke:var(--ink);stroke-width:2;fill:none}
+.back{stroke:var(--red);stroke-width:2;fill:none;stroke-dasharray:7 5}
+.bl{font-size:13px;fill:var(--red)}
+.ok{font-size:13px;fill:var(--green);font-weight:700}
+table{border-collapse:collapse;width:100%;margin-top:18px;background:var(--panel)}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;font-size:15px}
+th{background:var(--soft)}
+.legend{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a href="./">← 英雄聯盟新手 Wiki</a><span><a href="./#wiki/log.md">流程與檢查紀錄</a> · <a href="slides/">教學簡報</a></span></header>
+<h1>Workflow：從取得資料到產生簡報</h1>
+<p class="sub">藍框為步驟，紅色菱形為檢查點，紅色虛線為退回路線。金色小字為作業題目的步驟名稱。括號內數字為本次實際執行的結果。</p>
+
+<div class="fig">
+<svg viewBox="0 0 1200 560" role="img" aria-label="Workflow 流程圖">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker>
+  </defs>
+  <g style="color:var(--ink)">
+  <!-- Row 1 -->
+  <g class="node"><rect x="20" y="70" width="160" height="86" rx="10"/><text x="100" y="104" text-anchor="middle" class="k">① 討論範圍</text><text x="100" y="126" text-anchor="middle" class="t">主題、觀眾、譯名、範圍</text><text x="100" y="146" text-anchor="middle" class="t">（先討論，記入 log）</text></g>
+  <g class="node"><rect x="225" y="70" width="170" height="86" rx="10"/><text x="310" y="104" text-anchor="middle" class="k">② 取得來源</text><text x="310" y="126" text-anchor="middle" class="t">官方／授權 wiki／第三方</text><text x="310" y="146" text-anchor="middle" class="t">（11 份）</text></g>
+  <text x="310" y="62" text-anchor="middle" class="hw">取得資料</text>
+  <g class="node"><rect x="440" y="70" width="170" height="86" rx="10"/><text x="525" y="104" text-anchor="middle" class="k">③ 寫 Wiki 頁</text><text x="525" y="126" text-anchor="middle" class="t">每段標出處、術語入表</text><text x="525" y="146" text-anchor="middle" class="t">（18 頁＋術語表）</text></g>
+  <text x="525" y="62" text-anchor="middle" class="hw">整理（來源 → Wiki）</text>
+  <g class="chk"><polygon points="750,58 830,113 750,168 670,113"/><text x="750" y="108" text-anchor="middle" class="k">④ 交叉比對</text><text x="750" y="128" text-anchor="middle" class="t">C1–C4</text></g>
+  <text x="842" y="80" class="hw">檢查（Wiki）</text>
+  <line x1="180" y1="113" x2="221" y2="113" class="fwd" marker-end="url(#a)"/>
+  <line x1="395" y1="113" x2="436" y2="113" class="fwd" marker-end="url(#a)"/>
+  <line x1="610" y1="113" x2="666" y2="113" class="fwd" marker-end="url(#a)"/>
+  <g style="color:var(--red)">
+    <path d="M750 58 V22 H365 V66" class="back" marker-end="url(#a)"/>
+    <path d="M750 168 V200 H560 V160" class="back" marker-end="url(#a)"/>
+  </g>
+  <text x="530" y="16" text-anchor="middle" class="bl">缺資料 → 退回 ② 補來源（符文 → S10；譯名 → S11）</text>
+  <text x="655" y="222" text-anchor="middle" class="bl">不通過 → 退回 ③ 改寫（24 個格式問題、6 句無出處）</text>
+  <path d="M830 113 H960 V310" class="fwd" marker-end="url(#a)"/>
+  <text x="970" y="215" class="ok">通過</text>
+
+  <!-- Row 2 -->
+  <g class="node"><rect x="865" y="314" width="190" height="96" rx="10"/><text x="960" y="346" text-anchor="middle" class="k">⑤ 規劃大綱</text><text x="960" y="368" text-anchor="middle" class="t">查 Wiki，每張投影片</text><text x="960" y="388" text-anchor="middle" class="t">綁定一個 Wiki 頁</text></g>
+  <text x="900" y="432" text-anchor="middle" class="hw">查 Wiki ＋ 整理（大綱）</text>
+  <g class="node"><rect x="610" y="314" width="180" height="96" rx="10"/><text x="700" y="346" text-anchor="middle" class="k">⑥ 產生投影片</text><text x="700" y="368" text-anchor="middle" class="t">術語首次出現加解釋</text><text x="700" y="388" text-anchor="middle" class="t">（26 張，16:9）</text></g>
+  <text x="700" y="432" text-anchor="middle" class="hw">產生簡報</text>
+  <g class="chk"><polygon points="450,302 535,362 450,422 365,362"/><text x="450" y="357" text-anchor="middle" class="k">⑦ 簡報檢查</text><text x="450" y="377" text-anchor="middle" class="t">P1–P5</text></g>
+  <text x="470" y="444" class="hw">檢查（簡報）</text>
+  <g class="node"><rect x="40" y="314" width="200" height="96" rx="10"/><text x="140" y="346" text-anchor="middle" class="k">⑧ 部署與驗證</text><text x="140" y="368" text-anchor="middle" class="t">GitHub Pages，</text><text x="140" y="388" text-anchor="middle" class="t">於正式網址再檢查一次</text></g>
+  <line x1="865" y1="362" x2="794" y2="362" class="fwd" marker-end="url(#a)"/>
+  <line x1="610" y1="362" x2="539" y2="362" class="fwd" marker-end="url(#a)"/>
+  <line x1="365" y1="362" x2="244" y2="362" class="fwd" marker-end="url(#a)"/>
+  <text x="305" y="352" text-anchor="middle" class="ok">通過</text>
+  <g style="color:var(--red)">
+    <path d="M450 422 V490 H1010 V414" class="back" marker-end="url(#a)"/>
+    <path d="M450 302 V164" class="back" marker-end="url(#a)"/>
+    <path d="M90 410 V470 H190 V414" class="back" marker-end="url(#a)"/>
+  </g>
+  <text x="730" y="512" text-anchor="middle" class="bl">術語先用後解釋 → 退回 ⑤ 調整順序（14 處）</text>
+  <text x="462" y="262" class="bl">Wiki 缺內容 → 退回 ③ 補頁（2 張）</text>
+  <text x="140" y="494" text-anchor="middle" class="bl">正式網址 404 → 修正後重新部署</text>
+  </g>
+</svg>
+</div>
+<div class="legend"><span>━ 前進</span><span style="color:var(--red)">┅ 退回（附本次實際原因）</span><span style="color:var(--gold)">金色：作業題目的步驟名稱</span></div>
+
+<table>
+  <tr><th>作業題目的步驟</th><th>本流程</th><th>重複的時機</th><th>檢查或重生成</th><th>理由</th></tr>
+  <tr><td>取得資料</td><td>② 取得來源</td><td>④ 發現缺資料時（如符文、譯名）</td><td>④ 退回 ② 補來源</td><td>寫不出有出處的敘述時，問題出在來源，不在寫法</td></tr>
+  <tr><td>整理（來源 → Wiki）</td><td>③ 寫 Wiki 頁</td><td>每新增一份來源；④ 或 ⑦ 退回時</td><td>④ 交叉比對：程式檢查格式，人工逐句比對來源</td><td>簡報只能用 Wiki，所以 Wiki 的錯誤會原樣進入簡報，必須先在這裡攔下</td></tr>
+  <tr><td>查 Wiki ＋ 整理（大綱）</td><td>⑤ 規劃大綱</td><td>⑦ 退回時調整順序</td><td>大綱即綁定 Wiki 頁，供 ⑦ 程式比對</td><td>可追溯性在大綱階段就要確定，事後補追溯成本較高</td></tr>
+  <tr><td>產生簡報</td><td>⑥ 產生投影片</td><td>每次 ⑤ 或 ③ 修改後</td><td>重新產生受影響的投影片</td><td>—</td></tr>
+  <tr><td>檢查</td><td>④（Wiki）與 ⑦（簡報）兩處</td><td>每次修改後重跑兩支檢查程式</td><td>⑦：術語順序問題退回 ⑤，內容缺漏退回 ③</td><td>題目把檢查放在產生簡報之前；本流程在前後各設一處，前者攔來源錯誤，後者攔表達錯誤（術語順序、份量）</td></tr>
+</table>
+<p class="sub" style="margin-top:14px">檢查程式：tools/check_wiki.py、tools/check_slides.py。完整執行紀錄見「流程與檢查紀錄」頁。</p>
+</div>
+</body>
+</html>

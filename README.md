@@ -5,6 +5,7 @@
 - Wiki 瀏覽頁：`index.html`（GitHub Pages 根目錄）
 - 教學簡報：`slides/index.html`（16:9 橫式，26 張，每張標註對應 Wiki 頁）
 - 撰寫規則、workflow 與檢查清單：[CLAUDE.md](CLAUDE.md)
+- 流程圖：`workflow.html`
 - 討論、ingest、檢查與退回紀錄：[wiki/log.md](wiki/log.md)
 
 ## 結構
