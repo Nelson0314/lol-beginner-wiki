@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英雄聯盟新手 Wiki</title>
+<style>
+:root{--bg:#f6f5f1;--panel:#fff;--ink:#1d1f24;--muted:#5d6370;--line:#d9d6cc;--accent:#2f6fd0;--soft:#eef3fb}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15171c;--panel:#1e2129;--ink:#e8e9ec;--muted:#a3a9b6;--line:#343844;--accent:#6ea0ff;--soft:#232a38}}
+:root[data-theme="dark"]{--bg:#15171c;--panel:#1e2129;--ink:#e8e9ec;--muted:#a3a9b6;--line:#343844;--accent:#6ea0ff;--soft:#232a38}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.7}
+header{border-bottom:1px solid var(--line);background:var(--panel)}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+header .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+header a{color:var(--accent);text-decoration:none;font-weight:600}
+main{padding:24px 0 60px}
+.meta{font-size:14px;color:var(--muted);background:var(--soft);padding:8px 12px;border-radius:8px;margin-bottom:16px}
+article a{color:var(--accent)}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+pre{background:var(--soft);padding:12px;border-radius:8px;overflow-x:auto}
+code{font-family:Consolas,monospace}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="#wiki/index.md">英雄聯盟新手 Wiki</a>
+  <span><a href="#wiki/log.md">流程與檢查紀錄</a> · <a href="#wiki/glossary.md">術語</a> · <a href="slides/">教學簡報</a></span>
+</div></header>
+<main class="wrap"><div id="meta" class="meta" hidden></div><article id="doc">載入中…</article></main>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script>
+function resolve(base, rel){
+  var parts=base.split('/'); parts.pop();
+  rel.split('/').forEach(function(p){ if(p==='..') parts.pop(); else if(p!=='.') parts.push(p); });
+  return parts.join('/');
+}
+function load(){
+  var path=decodeURIComponent(location.hash.slice(1))||'wiki/index.md';
+  if(!/^wiki\//.test(path) && path.slice(-3)==='.md' && !/^(CLAUDE|AGENTS|README)\.md$/.test(path)) path='wiki/'+path;
+  fetch(path).then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); }).then(function(t){
+    t=t.replace(/\r\n/g,'\n');
+    var meta=document.getElementById('meta'), m=t.match(/^---\n([\s\S]*?)\n---\n/);
+    if(m){ t=t.slice(m[0].length); meta.textContent=m[1].split('\n').filter(function(l){return !/^related:/.test(l)}).join('　'); meta.hidden=false; }
+    else meta.hidden=true;
+    var doc=document.getElementById('doc'); doc.innerHTML=marked.parse(t);
+    doc.querySelectorAll('a[href]').forEach(function(a){
+      var h=a.getAttribute('href');
+      if(/^https?:/.test(h)) { a.target='_blank'; a.rel='noopener'; return; }
+      if(/\.md$/.test(h)) a.setAttribute('href','#'+resolve(path,h));
+    });
+    window.scrollTo(0,0);
+  }).catch(function(e){ document.getElementById('doc').textContent='找不到頁面：'+path+'（'+e.message+'）'; });
+}
+window.addEventListener('hashchange',load); load();
+</script>
+</body>
+</html>

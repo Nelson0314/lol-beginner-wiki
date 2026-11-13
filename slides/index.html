@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英雄聯盟新手入門</title>
+<style>
+:root{
+  --bg:#f6f5f1; --panel:#ffffff; --ink:#1d1f24; --muted:#5d6370; --line:#d9d6cc;
+  --accent:#2f6fd0; --accent2:#c0392b; --gold:#b9852a; --soft:#eef3fb; --good:#2e8b57;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15171c; --panel:#1e2129; --ink:#e8e9ec; --muted:#a3a9b6; --line:#343844;
+    --accent:#6ea0ff; --accent2:#ff7b6b; --gold:#e0b45a; --soft:#232a38; --good:#5fc28b;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15171c; --panel:#1e2129; --ink:#e8e9ec; --muted:#a3a9b6; --line:#343844;
+  --accent:#6ea0ff; --accent2:#ff7b6b; --gold:#e0b45a; --soft:#232a38; --good:#5fc28b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.6}
+.deck{max-width:1040px;margin:0 auto;padding:16px;min-height:100%;display:flex;flex-direction:column}
+.slide{display:none;flex:1;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:clamp(20px,4vw,48px);flex-direction:column}
+.slide.on{display:flex}
+.slide h1{font-size:clamp(28px,5vw,46px);margin:0 0 12px;line-height:1.25}
+.slide h2{font-size:clamp(22px,3.4vw,32px);margin:0 0 18px;line-height:1.3}
+.slide p,.slide li{font-size:clamp(16px,2.1vw,20px)}
+.slide ul,.slide ol{padding-left:1.3em;margin:0}
+.slide li{margin:6px 0}
+.kicker{color:var(--muted);font-size:14px;letter-spacing:.06em;margin-bottom:6px}
+.body{flex:1;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.body>*{flex:1 1 300px;min-width:0}
+dfn{font-style:normal;font-weight:700;color:var(--accent)}
+.en{color:var(--muted);font-size:.85em}
+.note{color:var(--muted);font-size:15px;margin-top:10px}
+.tag{display:inline-block;font-size:13px;padding:1px 8px;border-radius:99px;background:var(--soft);color:var(--accent);margin-left:6px;vertical-align:middle}
+.tag.adv{color:var(--gold)}
+table{border-collapse:collapse;width:100%;font-size:clamp(14px,1.9vw,18px)}
+th,td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:600}
+.big{font-size:clamp(22px,3vw,30px);font-weight:700}
+svg{width:100%;height:auto;max-height:420px}
+svg text{font-family:inherit;fill:var(--ink)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;color:var(--muted);font-size:14px;flex-wrap:wrap}
+.foot a{color:var(--accent)}
+.nav button{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 14px;font-size:15px;cursor:pointer}
+.nav button:hover{border-color:var(--accent)}
+.bar{height:4px;background:var(--line);border-radius:2px;margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);width:0}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 1 -->
+<section class="slide" data-wiki="index.md">
+  <div class="kicker">新手教學簡報</div>
+  <h1>英雄聯盟新手入門</h1>
+  <p>給完全沒玩過的人：這是什麼遊戲、怎樣算贏、隊伍裡五個位置各做什麼、開局前要做哪些準備。</p>
+  <p class="note">內容全部取自本專案的 LLM Wiki；每張投影片右下角標示對應的 Wiki 頁。使用台服譯名，英文原名放括號。<br>操作：← → 鍵或下方按鈕翻頁。</p>
+</section>
+
+<!-- 2 -->
+<section class="slide" data-wiki="concepts/game-goal.md">
+  <h2>這是什麼遊戲</h2>
+  <div class="body">
+    <ul>
+      <li>《英雄聯盟》是一款 <dfn>MOBA</dfn>：多人線上戰鬥競技場，兩隊各自操作角色，目標是摧毀對方基地。</li>
+      <li>最常見的玩法：在 <dfn>召喚峽谷</dfn> <span class="en">(Summoner's Rift)</span> 地圖上 5 對 5 對戰。</li>
+      <li>每位玩家操作一位 <dfn>英雄</dfn> <span class="en">(Champion)</span>；可選英雄超過 140 位。</li>
+    </ul>
+    <svg viewBox="0 0 300 160" role="img" aria-label="兩隊各五人">
+      <g fill="var(--accent)">
+        <circle cx="40" cy="40" r="14"/><circle cx="40" cy="80" r="14"/><circle cx="40" cy="120" r="14"/><circle cx="80" cy="60" r="14"/><circle cx="80" cy="100" r="14"/>
+      </g>
+      <g fill="var(--accent2)">
+        <circle cx="260" cy="40" r="14"/><circle cx="260" cy="80" r="14"/><circle cx="260" cy="120" r="14"/><circle cx="220" cy="60" r="14"/><circle cx="220" cy="100" r="14"/>
+      </g>
+      <text x="150" y="86" text-anchor="middle" font-size="22" font-weight="700">VS</text>
+      <text x="60" y="155" text-anchor="middle" font-size="13">5 人</text><text x="240" y="155" text-anchor="middle" font-size="13">5 人</text>
+    </svg>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="slide" data-wiki="concepts/game-goal.md">
+  <h2>怎樣算贏：摧毀對方主堡</h2>
+  <div class="body">
+    <ul>
+      <li>每隊基地中心有一座 <dfn>主堡</dfn> <span class="en">(Nexus)</span>，先被摧毀的一方輸。</li>
+      <li>主堡受到 <dfn>防禦塔</dfn> <span class="en">(Turret)</span> 與 <dfn>水晶兵營</dfn> <span class="en">(Inhibitor)</span> 保護。</li>
+      <li>所以要沿著 <dfn>路線</dfn> <span class="en">(Lane)</span> 一座一座推進。</li>
+    </ul>
+    <svg viewBox="0 0 320 120" role="img" aria-label="一條路線上的建築順序">
+      <line x1="10" y1="60" x2="310" y2="60" stroke="var(--line)" stroke-width="18" stroke-linecap="round"/>
+      <g fill="var(--accent2)"><rect x="40" y="48" width="18" height="24"/><rect x="95" y="48" width="18" height="24"/><rect x="150" y="48" width="18" height="24"/></g>
+      <polygon points="215,44 231,60 215,76 199,60" fill="var(--gold)"/>
+      <circle cx="280" cy="60" r="20" fill="var(--accent2)"/>
+      <text x="104" y="100" text-anchor="middle" font-size="13">防禦塔 ×3</text>
+      <text x="215" y="100" text-anchor="middle" font-size="13">水晶兵營</text>
+      <text x="280" y="100" text-anchor="middle" font-size="13">主堡</text>
+      <text x="10" y="30" font-size="13">我方推進方向 →</text>
+    </svg>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="slide" data-wiki="concepts/map.md">
+  <h2>地圖：三條路線與野區</h2>
+  <div class="body">
+    <svg viewBox="0 0 320 320" role="img" aria-label="召喚峽谷示意圖">
+      <rect x="10" y="10" width="300" height="300" rx="10" fill="var(--soft)" stroke="var(--line)"/>
+      <path d="M40 280 L40 40 L280 40" fill="none" stroke="var(--muted)" stroke-width="12" stroke-linejoin="round" opacity=".55"/>
+      <path d="M40 280 L280 280 L280 40" fill="none" stroke="var(--muted)" stroke-width="12" stroke-linejoin="round" opacity=".55"/>
+      <path d="M40 280 L280 40" stroke="var(--muted)" stroke-width="12" opacity=".55"/>
+      <circle cx="40" cy="280" r="20" fill="var(--accent)"/><circle cx="280" cy="40" r="20" fill="var(--accent2)"/>
+      <text x="80" y="32" font-size="14">上路</text>
+      <text x="138" y="150" font-size="14">中路</text>
+      <text x="215" y="300" font-size="14">下路</text>
+      <text x="80" y="130" font-size="13" fill="var(--good)">野區</text>
+      <text x="200" y="230" font-size="13" fill="var(--good)">野區</text>
+      <text x="64" y="300" font-size="12">我方基地</text><text x="200" y="22" font-size="12">敵方基地</text>
+    </svg>
+    <ul>
+      <li>兩隊基地在三條路線的兩端，打通任一條就能抵達敵方主堡。</li>
+      <li><dfn>上路</dfn> 在上方角落、<dfn>中路</dfn> 在中央、<dfn>下路</dfn> 在另一側。</li>
+      <li>路線之間是 <dfn>野區</dfn> <span class="en">(Jungle)</span>，有不屬於任何一方的 <dfn>野怪</dfn>；野區中有 <dfn>河道</dfn> <span class="en">(River)</span>。</li>
+      <li>主堡後方的 <dfn>召喚平台</dfn> 可快速回復，並使用 <dfn>商店</dfn>。</li>
+    </ul>
+  </div>
+  <p class="note">示意圖，非實際比例。</p>
+</section>
+
+<!-- 7 -->
+<section class="slide" data-wiki="concepts/gold-and-exp.md">
+  <h2>經驗值與金錢</h2>
+  <table>
+    <tr><th></th><th><dfn>經驗值</dfn></th><th><dfn>金錢</dfn></th></tr>
+    <tr><td>怎麼拿</td><td>擊殺敵方單位與英雄、<dfn>助攻</dfn>、推塔</td><td>擊殺敵方單位、野怪與英雄，推塔</td></tr>
+    <tr><td>做什麼用</td><td>累積後 <dfn>升級</dfn>：解鎖或強化技能、提升基礎能力</td><td>在商店購買 <dfn>裝備</dfn></td></tr>
+  </table>
+  <p class="big" style="margin-top:22px">擊殺敵方英雄不會直接獲勝，但能取得經驗與金錢。<br>經驗與金錢領先的一方英雄更強，較容易贏下戰鬥並推進。</p>
+</section>
+
+<!-- 5 -->
+<section class="slide" data-wiki="concepts/minions-and-farming.md">
+  <h2>士兵與兵線</h2>
+  <ul>
+    <li><dfn>士兵</dfn> <span class="en">(Minion)</span> 由雙方主堡自動生成，沿三條路線前進，攻擊遇到的敵人。</li>
+    <li>第一波約在開局 30 秒出現，之後約每 30 秒一波。</li>
+    <li>一群一起前進的士兵叫 <dfn>兵線</dfn>：有近戰兵、遠程兵，定期加入砲車兵。</li>
+    <li>摧毀敵方某路的水晶兵營後，我方在那條路會出現更強的 <dfn>超級士兵</dfn>。</li>
+    <li>注意：在士兵附近攻擊敵方英雄，敵方士兵會轉而攻擊你。</li>
+  </ul>
+</section>
+
+<!-- 6 -->
+<section class="slide" data-wiki="concepts/minions-and-farming.md">
+  <h2>補兵：最後一擊才拿錢</h2>
+  <div class="body">
+    <ul>
+      <li><dfn>補兵</dfn> <span class="en">(last hit)</span>：對士兵打出最後一擊的人才拿到金錢。</li>
+      <li>補到的士兵數叫 <dfn>CS</dfn> <span class="en">(Creep Score)</span>。</li>
+      <li>一波士兵約值 115–150 金，是最主要的金錢來源之一。</li>
+      <li>經驗值不需要最後一擊：士兵死亡時，附近的敵方英雄平分經驗。</li>
+    </ul>
+    <svg viewBox="0 0 300 150" role="img" aria-label="補兵示意">
+      <rect x="40" y="60" width="220" height="16" rx="8" fill="var(--line)"/>
+      <rect x="40" y="60" width="18" height="16" rx="8" fill="var(--accent2)"/>
+      <text x="150" y="48" text-anchor="middle" font-size="14">士兵血量剩一點</text>
+      <text x="150" y="110" text-anchor="middle" font-size="15" font-weight="700" fill="var(--gold)">最後一下打死 → +金錢</text>
+      <text x="150" y="135" text-anchor="middle" font-size="13">站在附近 → +經驗（不論誰打死）</text>
+    </svg>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="slide" data-wiki="concepts/champions-and-abilities.md">
+  <h2>英雄的技能與按鍵</h2>
+  <div class="body">
+    <ul>
+      <li><dfn>被動技能</dfn>：自動生效。</li>
+      <li>三個 <dfn>基礎技能</dfn>＋一個 <dfn>大絕</dfn>（最強的技能），用 <dfn>Q、W、E、R</dfn> 鍵施放。</li>
+      <li>另外攜帶兩個 <dfn>召喚師技能</dfn>，預設 <dfn>D、F</dfn> 鍵。</li>
+      <li>常用召喚師技能：<dfn>閃現</dfn>、<dfn>傳送</dfn>、<dfn>重擊</dfn>、<dfn>點燃</dfn>；新帳號就有 <dfn>鬼步</dfn>、<dfn>治癒</dfn>。</li>
+    </ul>
+    <svg viewBox="0 0 300 140" role="img" aria-label="按鍵配置">
+      <g font-size="22" font-weight="700" text-anchor="middle">
+        <rect x="20" y="20" width="50" height="50" rx="8" fill="var(--soft)" stroke="var(--line)"/><text x="45" y="53">Q</text>
+        <rect x="80" y="20" width="50" height="50" rx="8" fill="var(--soft)" stroke="var(--line)"/><text x="105" y="53">W</text>
+        <rect x="140" y="20" width="50" height="50" rx="8" fill="var(--soft)" stroke="var(--line)"/><text x="165" y="53">E</text>
+        <rect x="200" y="20" width="50" height="50" rx="8" fill="var(--soft)" stroke="var(--accent)"/><text x="225" y="53">R</text>
+        <rect x="80" y="80" width="50" height="50" rx="8" fill="var(--soft)" stroke="var(--gold)"/><text x="105" y="113">D</text>
+        <rect x="140" y="80" width="50" height="50" rx="8" fill="var(--soft)" stroke="var(--gold)"/><text x="165" y="113">F</text>
+      </g>
+      <text x="262" y="50" font-size="12">大絕</text><text x="200" y="110" font-size="12">召喚師技能</text>
+    </svg>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="slide" data-wiki="roles/overview.md">
+  <h2>五個位置</h2>
+  <table>
+    <tr><th>位置</th><th>在哪裡</th><th>一句話</th></tr>
+    <tr><td>上路</td><td>上方單人路線</td><td>耐打、擅長單挑</td></tr>
+    <tr><td><dfn>打野</dfn></td><td>野區</td><td>打野怪取得經驗與金錢、支援各路</td></tr>
+    <tr><td>中路</td><td>中央單人路線</td><td>高爆發輸出</td></tr>
+    <tr><td>下路（<dfn>射手</dfn>）</td><td>下方雙人路線</td><td>補兵累積金錢，後期主輸出</td></tr>
+    <tr><td><dfn>輔助</dfn></td><td>與射手一起在下路</td><td>保護射手、負責 <dfn>視野</dfn>（看得到敵人的範圍）</td></tr>
+  </table>
+  <p class="note">接下來五張逐一說明。</p>
+</section>
+
+<!-- 10 -->
+<section class="slide" data-wiki="roles/top.md">
+  <h2>上路</h2>
+  <ul>
+    <li>位置：上方單人路線，離隊友最遠，要能自給自足。</li>
+    <li>開局的 <dfn>對線期</dfn>：與對手 <dfn>換血</dfn>（互相消耗血量）並補兵。</li>
+    <li>後期可 <dfn>分推</dfn>：在側路單獨推進，再用傳送回到 <dfn>團戰</dfn>。</li>
+    <li>常見英雄：<dfn>鬥士</dfn>、<dfn>坦克</dfn>。召喚師技能常帶閃現＋傳送或點燃。</li>
+    <li><dfn>路線任務</dfn>（26.1）：完成後等級上限提高、經驗獲取增加。</li>
+  </ul>
+</section>
+
+<!-- 11 -->
+<section class="slide" data-wiki="roles/jungle.md">
+  <h2>打野</h2>
+  <ul>
+    <li>位置：不在路線上，在野區移動；經驗與金錢主要來自野怪。</li>
+    <li>必帶重擊；開局選一隻會成長的 <dfn>打野寵物</dfn>。</li>
+    <li>工作一：拿 <dfn>史詩野怪</dfn>（擊殺後給整隊增益的大型野怪，第 23 張說明）。</li>
+    <li>工作二：<dfn>抓人</dfn> <span class="en">(gank)</span>，從野區突襲某條路的敵人。</li>
+    <li>工作三：控制河道與野區的視野。</li>
+    <li><span class="tag adv">建議</span> 需要理解整張地圖，新手最後再學。</li>
+  </ul>
+</section>
+
+<!-- 12 -->
+<section class="slide" data-wiki="roles/mid.md">
+  <h2>中路</h2>
+  <ul>
+    <li>位置：地圖中央的單人路線，三條路中最短。</li>
+    <li>工作：對線補兵；位置居中，可 <dfn>遊走</dfn>（離開自己的路去支援別路）。</li>
+    <li>常見英雄：<dfn>法師</dfn>、<dfn>刺客</dfn>，通常有高爆發傷害，團戰負責主要輸出。</li>
+    <li>路線任務（26.1）：<dfn>鞋子</dfn>（提升移動速度的道具）免費升一級，並定期獲得強化 <dfn>回城</dfn>。</li>
+  </ul>
+</section>
+
+<!-- 13 -->
+<section class="slide" data-wiki="roles/bottom.md">
+  <h2>下路（射手）</h2>
+  <ul>
+    <li>位置：下方路線，由射手和輔助兩人共用。</li>
+    <li>工作：對線期專心補兵；射手依賴裝備，後期成為主要的持續輸出。</li>
+    <li>射手用普通攻擊從遠距離輸出，但非常脆弱，團戰要站在隊友後方。</li>
+    <li>路線任務（26.1）：完成後得額外金錢，鞋子移到任務欄，等於多一格道具欄。</li>
+  </ul>
+</section>
+
+<!-- 14 -->
+<section class="slide" data-wiki="roles/support.md">
+  <h2>輔助</h2>
+  <ul>
+    <li>位置：和射手一起在下路。</li>
+    <li>通常不補兵，把士兵的錢讓給射手；改用專屬 <dfn>輔助道具</dfn> 賺錢。</li>
+    <li>前期保護射手，之後支援全隊。</li>
+    <li>主要職責：控制全地圖的視野。</li>
+    <li>常見英雄：<dfn>控制者</dfn>、坦克。</li>
+    <li><span class="tag adv">建議</span> 不需要補兵，適合新手第一個學。</li>
+  </ul>
+</section>
+
+<!-- 15 -->
+<section class="slide" data-wiki="draft/champion-select.md">
+  <h2>選角流程</h2>
+  <svg viewBox="0 0 640 150" role="img" aria-label="選角階段時間軸">
+    <g font-size="14" text-anchor="middle">
+      <rect x="5" y="30" width="100" height="56" rx="8" fill="var(--soft)" stroke="var(--line)"/><text x="55" y="55">1 宣告</text><text x="55" y="75" font-size="12">約 15 秒</text>
+      <rect x="115" y="30" width="110" height="56" rx="8" fill="var(--soft)" stroke="var(--accent2)"/><text x="170" y="55">2 禁用</text><text x="170" y="75" font-size="12">30 秒</text>
+      <rect x="235" y="30" width="90" height="56" rx="8" fill="var(--soft)" stroke="var(--line)"/><text x="280" y="55">3 揭曉</text><text x="280" y="75" font-size="12">5 秒</text>
+      <rect x="335" y="30" width="170" height="56" rx="8" fill="var(--soft)" stroke="var(--accent)"/><text x="420" y="55">4 輪流選角</text><text x="420" y="75" font-size="12">1-2-2-2-2-1</text>
+      <rect x="515" y="30" width="120" height="56" rx="8" fill="var(--soft)" stroke="var(--line)"/><text x="575" y="55">5 確認</text><text x="575" y="75" font-size="12">30 秒</text>
+      <text x="320" y="125" font-size="13">全程約 4 分 20 秒</text>
+    </g>
+  </svg>
+  <ul>
+    <li><dfn>禁用</dfn>：每人禁一位英雄，雙方同時進行，被禁的英雄這場沒人能用。</li>
+    <li><dfn>藍方</dfn> 先選 1 位，之後雙方輪流各選 2 位。點選只是宣告，按 <dfn>鎖定</dfn> 才算數。</li>
+    <li>時間內沒鎖定或中途關閉遊戲 → 選角解散，並受 <dfn>逃跑</dfn> 懲罰。</li>
+    <li>確認階段：隊友可交換英雄，並完成開局前的設定（第 19 張）。</li>
+  </ul>
+</section>
+
+<!-- 16 -->
+<section class="slide" data-wiki="draft/choosing-champions.md">
+  <h2>怎麼挑英雄（一）：角色類型</h2>
+  <table>
+    <tr><th>類型</th><th>擅長</th><th>弱點</th></tr>
+    <tr><td>坦克</td><td>承受傷害、干擾敵人、開團</td><td>輸出低</td></tr>
+    <tr><td>鬥士</td><td>耐打的近戰持續輸出</td><td>射程短</td></tr>
+    <tr><td>法師</td><td>用技能造成大量傷害</td><td>被近身後脆弱</td></tr>
+    <tr><td>射手</td><td>遠距離普通攻擊的穩定輸出</td><td>非常脆弱，依賴裝備</td></tr>
+    <tr><td>刺客</td><td>快速切入擊殺單一目標</td><td>脆弱</td></tr>
+    <tr><td>控制者</td><td>保護隊友、<dfn>控場</dfn>（限制敵人行動）</td><td>本身傷害低</td></tr>
+  </table>
+  <p class="note">每位英雄依戰鬥方式歸入一種 <dfn>角色類型</dfn>。</p>
+</section>
+
+<!-- 17 -->
+<section class="slide" data-wiki="draft/choosing-champions.md">
+  <h2>怎麼挑英雄（二）：陣容搭配</h2>
+  <ul>
+    <li>各類型互有強弱，沒有一類全面壓制，所以一隊要混合不同類型。</li>
+    <li>簡單檢查三件事：</li>
+  </ul>
+  <div class="body">
+    <svg viewBox="0 0 600 120" role="img" aria-label="陣容三要素">
+      <g text-anchor="middle" font-size="16">
+        <rect x="10" y="20" width="180" height="80" rx="12" fill="var(--soft)" stroke="var(--accent)"/><text x="100" y="55" font-weight="700">能扛</text><text x="100" y="80" font-size="13">坦克或鬥士</text>
+        <rect x="210" y="20" width="180" height="80" rx="12" fill="var(--soft)" stroke="var(--accent2)"/><text x="300" y="55" font-weight="700">能打</text><text x="300" y="80" font-size="13">射手、法師</text>
+        <rect x="410" y="20" width="180" height="80" rx="12" fill="var(--soft)" stroke="var(--gold)"/><text x="500" y="55" font-weight="700">能控</text><text x="500" y="80" font-size="13">有控場能力</text>
+      </g>
+    </svg>
+  </div>
+  <p class="note">各位置常見類型：上路 鬥士／坦克；打野 鬥士／刺客／坦克；中路 法師／刺客；下路 射手；輔助 控制者／坦克。</p>
+</section>
+
+<!-- 18 -->
+<section class="slide" data-wiki="draft/choosing-champions.md">
+  <h2>新手推薦英雄 <span class="tag adv">建議</span></h2>
+  <p>挑選標準：需要瞄準的技能少、容錯高、任務明確。</p>
+  <table>
+    <tr><th>位置</th><th>推薦</th></tr>
+    <tr><td>上路</td><td>蓋倫 <span class="en">Garen</span>、墨菲特 <span class="en">Malphite</span></td></tr>
+    <tr><td>打野</td><td>沃維克 <span class="en">Warwick</span>、阿姆姆 <span class="en">Amumu</span></td></tr>
+    <tr><td>中路</td><td>安妮 <span class="en">Annie</span>、拉克絲 <span class="en">Lux</span></td></tr>
+    <tr><td>下路</td><td>艾希 <span class="en">Ashe</span>、好運姐 <span class="en">Miss Fortune</span>、凱特琳 <span class="en">Caitlyn</span></td></tr>
+    <tr><td>輔助</td><td>雷歐娜 <span class="en">Leona</span>、索拉卡 <span class="en">Soraka</span>、納帝魯斯 <span class="en">Nautilus</span></td></tr>
+  </table>
+</section>
+
+<!-- 19 -->
+<section class="slide" data-wiki="draft/runes-and-spells.md">
+  <h2>符文與召喚師技能</h2>
+  <div class="body">
+    <ul>
+      <li><dfn>符文</dfn>：開局前選好的額外效果。</li>
+      <li>一頁符文＝<dfn>主系</dfn>（一個 <dfn>基石符文</dfn>＋三個）＋<dfn>副系</dfn>（兩個）＋三格屬性碎片。</li>
+      <li>新手做法：直接套用選角畫面的 <dfn>推薦符文</dfn>；帳號等級 10 以下也不能自己編輯。</li>
+    </ul>
+    <table>
+      <tr><th>位置</th><th>召喚師技能</th></tr>
+      <tr><td>打野</td><td>閃現＋重擊（必帶）</td></tr>
+      <tr><td>上路</td><td>閃現＋傳送或點燃</td></tr>
+      <tr><td>其他</td><td>閃現＋另一個；推薦功能可一併建議</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 20 -->
+<section class="slide" data-wiki="items/item-basics.md">
+  <h2>出裝（一）：道具欄與分級</h2>
+  <div class="body">
+    <ul>
+      <li>六格道具＋一格 <dfn>飾品</dfn>，共七格；在基地商店用金錢購買。</li>
+      <li>道具的組合與順序叫 <dfn>出裝</dfn> <span class="en">(build)</span>。</li>
+    </ul>
+    <svg viewBox="0 0 320 200" role="img" aria-label="道具分級">
+      <g font-size="14">
+        <rect x="10" y="10" width="140" height="40" rx="8" fill="var(--soft)" stroke="var(--line)"/><text x="80" y="35" text-anchor="middle">起手道具</text>
+        <rect x="10" y="80" width="140" height="40" rx="8" fill="var(--soft)" stroke="var(--line)"/><text x="80" y="105" text-anchor="middle">基礎道具</text>
+        <rect x="170" y="80" width="140" height="40" rx="8" fill="var(--soft)" stroke="var(--accent)"/><text x="240" y="105" text-anchor="middle">史詩道具</text>
+        <rect x="90" y="150" width="140" height="40" rx="8" fill="var(--soft)" stroke="var(--gold)"/><text x="160" y="175" text-anchor="middle" font-weight="700">傳說道具</text>
+        <path d="M80 120 L140 150 M240 120 L180 150 M150 100 L170 100" stroke="var(--muted)" fill="none" stroke-width="2"/>
+        <text x="160" y="35" font-size="12">開局買，不合成</text>
+      </g>
+    </svg>
+  </div>
+  <table>
+    <tr><td><dfn>起手道具</dfn></td><td>開局買的便宜道具，多數不能合成</td></tr>
+    <tr><td><dfn>基礎道具</dfn>／<dfn>史詩道具</dfn></td><td>合成材料，屬性由低到高</td></tr>
+    <tr><td><dfn>傳說道具</dfn></td><td>合成後效果最強；同一種只能帶一個</td></tr>
+  </table>
+</section>
+
+<!-- 21 -->
+<section class="slide" data-wiki="items/item-basics.md">
+  <h2>出裝（二）：怎麼買</h2>
+  <ul>
+    <li>傳說道具由零件合成，錢不夠時可以先買零件，之後再合成。</li>
+    <li>鞋子只能裝一雙，分三階。</li>
+    <li><dfn>消耗品</dfn>：用掉就沒有的道具，例如生命藥水（回血）。</li>
+    <li><span class="tag adv">建議</span> 依對方的傷害類型調整，不要每場出同一套。</li>
+    <li>26.1 路線任務：中路可免費升級鞋子，下路的鞋子移到任務欄。</li>
+  </ul>
+</section>
+
+<!-- 22 -->
+<section class="slide" data-wiki="concepts/vision.md">
+  <h2>視野與守衛</h2>
+  <ul>
+    <li>沒有我方單位的地方被 <dfn>戰爭迷霧</dfn> 遮住，看不到敵人。</li>
+    <li><dfn>守衛</dfn> <span class="en">(Ward)</span>，俗稱「眼」，放下後驅散周圍迷霧。</li>
+  </ul>
+  <table>
+    <tr><th>名稱</th><th>取得</th><th>特性</th></tr>
+    <tr><td><dfn>偵查守衛</dfn></td><td>預設飾品</td><td>隱形，約 150 秒後消失，最多 3 個</td></tr>
+    <tr><td><dfn>控域守衛</dfn></td><td>商店購買</td><td>不會消失，限 1 個；讓附近敵方守衛失效</td></tr>
+    <tr><td><dfn>神諭透鏡</dfn></td><td>飾品</td><td>清除附近隱形守衛</td></tr>
+    <tr><td><dfn>遠見改造</dfn></td><td>飾品</td><td>可遠距離放置的守衛</td></tr>
+  </table>
+</section>
+
+<!-- 23 -->
+<section class="slide" data-wiki="concepts/objectives.md">
+  <h2>中立資源：史詩野怪</h2>
+  <table>
+    <tr><th>名稱</th><th>擊殺後</th></tr>
+    <tr><td><dfn>飛龍</dfn></td><td>五種元素，依元素給全隊永久加成</td></tr>
+    <tr><td><dfn>遠古巨龍</dfn></td><td>比賽後段出現的更強飛龍</td></tr>
+    <tr><td><dfn>巴龍納什</dfn></td><td>野區最強；全隊增強、附近士兵大幅變強（26.1 起約 20 分鐘出現）</td></tr>
+    <tr><td><dfn>預示者</dfn>、<dfn>虛空幼蟲</dfn></td><td>其他史詩野怪</td></tr>
+  </table>
+  <p class="note">主要由打野負責，但通常需要隊友一起。守衛放在附近可提早發現敵人。</p>
+</section>
+
+<!-- 24 -->
+<section class="slide" data-wiki="concepts/beginner-mistakes.md">
+  <h2>新手常見錯誤 <span class="tag adv">建議</span></h2>
+  <ol>
+    <li>追擊敵人進入戰爭迷霧：對方隊友可能在等著。</li>
+    <li>漏補兵：補兵是主要金錢來源。</li>
+    <li>不看 <dfn>小地圖</dfn>：不知道敵方打野在哪。</li>
+    <li>每場出同一套裝。</li>
+    <li>沒有目的地打架：戰鬥應圍繞飛龍、巴龍或防禦塔。</li>
+    <li>不插守衛：沒有視野就容易被偷襲。</li>
+  </ol>
+</section>
+
+<!-- 25 -->
+<section class="slide" data-wiki="concepts/beginner-mistakes.md">
+  <h2>練習路線 <span class="tag adv">建議</span></h2>
+  <div class="body">
+    <svg viewBox="0 0 560 120" role="img" aria-label="練習順序">
+      <g text-anchor="middle" font-size="15">
+        <rect x="5" y="30" width="120" height="56" rx="10" fill="var(--soft)" stroke="var(--accent)"/><text x="65" y="63">1 補兵</text>
+        <rect x="145" y="30" width="120" height="56" rx="10" fill="var(--soft)" stroke="var(--line)"/><text x="205" y="63">2 看地圖</text>
+        <rect x="285" y="30" width="120" height="56" rx="10" fill="var(--soft)" stroke="var(--line)"/><text x="345" y="63">3 換血</text>
+        <rect x="425" y="30" width="120" height="56" rx="10" fill="var(--soft)" stroke="var(--line)"/><text x="485" y="63">4 團戰</text>
+        <path d="M125 58 H145 M265 58 H285 M405 58 H425" stroke="var(--muted)" stroke-width="2"/>
+      </g>
+    </svg>
+  </div>
+  <ul>
+    <li>先專精一位英雄，約 20 場。</li>
+    <li>一次只練一項基本功，照上面的順序。</li>
+    <li>位置建議從輔助開始，打野最後學。</li>
+  </ul>
+</section>
+
+  <div class="bar"><i id="bar"></i></div>
+  <div class="foot">
+    <span id="src"></span>
+    <span class="nav"><button id="prev" aria-label="上一張">←</button> <span id="num"></span> <button id="next" aria-label="下一張">→</button></span>
+  </div>
+</div>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var i=0;
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    var w=slides[i].getAttribute('data-wiki');
+    document.getElementById('src').innerHTML='對應 Wiki：<a href="../#'+w+'">'+w+'</a>';
+    document.getElementById('num').textContent=(i+1)+' / '+slides.length;
+    document.getElementById('bar').style.width=((i+1)/slides.length*100)+'%';
+    if(location.hash!=='#'+(i+1)) history.replaceState(null,'','#'+(i+1));
+  }
+  document.getElementById('prev').onclick=function(){show(i-1)};
+  document.getElementById('next').onclick=function(){show(i+1)};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){show(i+1);e.preventDefault()}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){show(i-1);e.preventDefault()}
+  });
+  var h=parseInt(location.hash.slice(1),10);
+  show(isNaN(h)?0:h-1);
+})();
+</script>
+</body>
+</html>
