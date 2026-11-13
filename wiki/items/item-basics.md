@@ -1,6 +1,6 @@
 ---
 title: 出裝基礎
-sources: [S1, S2, S4, S8, S9]
+sources: [S1, S2, S4, S8, S9, S11]
 related: [concepts/gold-and-exp.md, concepts/vision.md]
 ---
 ## 道具欄（S1、S4）
@@ -15,6 +15,8 @@ related: [concepts/gold-and-exp.md, concepts/vision.md]
 | **史詩道具**（Epic） | 屬性較高或有新效果，用來合成 |
 | **傳說道具**（Legendary） | 由基礎與史詩合成，效果最強；同一種只能帶一個 |
 
+範例（S11 遊戲資料）：起手 多蘭之劍；基礎 長劍 → 史詩 吸血鬼權杖（由長劍合成）→ 傳說 殞落王者之劍（由吸血鬼權杖等合成）。鞋子 → 狂戰士護脛（第二階鞋子之一）。
+
 ## 出裝邏輯
 - 傳說道具由基礎與史詩道具合成，所以錢不夠時可以先買其中的零件，之後再合成。（依 S4 分級說明歸納）
 - **鞋子** 只能裝一雙，分三階，提升移動速度。（S4）
@@ -28,6 +30,7 @@ related: [concepts/gold-and-exp.md, concepts/vision.md]
 - [S4](../sources/S04-wiki-item.md)
 - [S8](../sources/S08-wiki-ward.md)
 - [S9](../sources/S09-dodgegg-beginner-champions.md)
+- [S11](../sources/S11-ddragon.md)
 
 ## 相關頁面
 - [經驗與金錢](../concepts/gold-and-exp.md)

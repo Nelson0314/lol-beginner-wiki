@@ -1,6 +1,6 @@
 ---
 title: 上路
-sources: [S1, S2, S5, S6]
+sources: [S1, S2, S5, S6, S9, S11]
 related: [roles/jungle.md, concepts/map.md]
 ---
 - 位置：地圖上方的單人路線，離隊友最遠，需要自給自足。（S5）
@@ -8,12 +8,15 @@ related: [roles/jungle.md, concepts/map.md]
 - 常見英雄類型：鬥士、坦克。擅長單挑的耐打角色。（S1、S6）
 - 常帶召喚師技能：閃現＋傳送或點燃。（S5）
 - 路線任務（26.1）：完成後等級上限提高、經驗獲取增加。（S2）
+- 新手推薦英雄：蓋倫、墨菲特（建議，S9；譯名依 S11）。
 
 ## 來源
 - [S1](../sources/S01-official-how-to-play.md)
 - [S2](../sources/S02-official-patch-26-1.md)
 - [S5](../sources/S05-wiki-position.md)
 - [S6](../sources/S06-wiki-champion-classes.md)
+- [S9](../sources/S09-dodgegg-beginner-champions.md)
+- [S11](../sources/S11-ddragon.md)
 
 ## 相關頁面
 - [打野](jungle.md)

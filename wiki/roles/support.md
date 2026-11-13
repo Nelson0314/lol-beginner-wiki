@@ -1,6 +1,6 @@
 ---
 title: 輔助
-sources: [S2, S5, S6, S9]
+sources: [S2, S5, S6, S9, S11]
 related: [roles/bottom.md, concepts/vision.md]
 ---
 - 位置：與射手一起在下路。（S5）
@@ -11,12 +11,14 @@ related: [roles/bottom.md, concepts/vision.md]
 - 常見英雄類型：控制者（功能型輔助、捕捉者）、坦克。（S6）
 - 路線任務（26.1）：控域守衛降價，可在任務欄存放。（S2）
 - 建議：不需要補兵，第三方來源建議新手從輔助開始學。（S9）
+- 新手推薦英雄：雷歐娜、索拉卡、納帝魯斯（建議，S9；譯名依 S11）。
 
 ## 來源
 - [S2](../sources/S02-official-patch-26-1.md)
 - [S5](../sources/S05-wiki-position.md)
 - [S6](../sources/S06-wiki-champion-classes.md)
 - [S9](../sources/S09-dodgegg-beginner-champions.md)
+- [S11](../sources/S11-ddragon.md)
 
 ## 相關頁面
 - [下路](bottom.md)

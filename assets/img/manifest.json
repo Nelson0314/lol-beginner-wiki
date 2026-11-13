@@ -1,0 +1,227 @@
+{
+ "_version": "16.22.1",
+ "champion/Garen.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Garen.png",
+  "zh_TW": "蓋倫（蒂瑪西亞之力）"
+ },
+ "loading/Garen.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Garen_0.jpg",
+  "zh_TW": "蓋倫（蒂瑪西亞之力）"
+ },
+ "champion/Malphite.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Malphite.png",
+  "zh_TW": "墨菲特（幻石碎片）"
+ },
+ "loading/Malphite.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Malphite_0.jpg",
+  "zh_TW": "墨菲特（幻石碎片）"
+ },
+ "champion/Warwick.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Warwick.png",
+  "zh_TW": "沃維克（嗜血狂怒）"
+ },
+ "loading/Warwick.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Warwick_0.jpg",
+  "zh_TW": "沃維克（嗜血狂怒）"
+ },
+ "champion/Amumu.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Amumu.png",
+  "zh_TW": "阿姆姆（殤之木乃伊）"
+ },
+ "loading/Amumu.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Amumu_0.jpg",
+  "zh_TW": "阿姆姆（殤之木乃伊）"
+ },
+ "champion/Annie.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Annie.png",
+  "zh_TW": "安妮（黑暗之女）"
+ },
+ "loading/Annie.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Annie_0.jpg",
+  "zh_TW": "安妮（黑暗之女）"
+ },
+ "champion/Lux.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Lux.png",
+  "zh_TW": "拉克絲（光之少女）"
+ },
+ "loading/Lux.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Lux_0.jpg",
+  "zh_TW": "拉克絲（光之少女）"
+ },
+ "champion/Ashe.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Ashe.png",
+  "zh_TW": "艾希（冰霜射手）"
+ },
+ "loading/Ashe.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ashe_0.jpg",
+  "zh_TW": "艾希（冰霜射手）"
+ },
+ "champion/MissFortune.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/MissFortune.png",
+  "zh_TW": "好運姐（賞金獵人）"
+ },
+ "loading/MissFortune.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/MissFortune_0.jpg",
+  "zh_TW": "好運姐（賞金獵人）"
+ },
+ "champion/Caitlyn.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Caitlyn.png",
+  "zh_TW": "凱特琳（執法者）"
+ },
+ "loading/Caitlyn.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Caitlyn_0.jpg",
+  "zh_TW": "凱特琳（執法者）"
+ },
+ "champion/Leona.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Leona.png",
+  "zh_TW": "雷歐娜（黎明之光）"
+ },
+ "loading/Leona.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Leona_0.jpg",
+  "zh_TW": "雷歐娜（黎明之光）"
+ },
+ "champion/Soraka.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Soraka.png",
+  "zh_TW": "索拉卡（眾星之子）"
+ },
+ "loading/Soraka.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Soraka_0.jpg",
+  "zh_TW": "索拉卡（眾星之子）"
+ },
+ "champion/Nautilus.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Nautilus.png",
+  "zh_TW": "納帝魯斯（深淵巨人）"
+ },
+ "loading/Nautilus.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nautilus_0.jpg",
+  "zh_TW": "納帝魯斯（深淵巨人）"
+ },
+ "champion/Jinx.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Jinx.png",
+  "zh_TW": "吉茵珂絲（暴走重砲）"
+ },
+ "loading/Jinx.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jinx_0.jpg",
+  "zh_TW": "吉茵珂絲（暴走重砲）"
+ },
+ "champion/Ahri.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/champion/Ahri.png",
+  "zh_TW": "阿璃（九尾妖狐）"
+ },
+ "loading/Ahri.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ahri_0.jpg",
+  "zh_TW": "阿璃（九尾妖狐）"
+ },
+ "splash/Garen.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg",
+  "zh_TW": "蓋倫"
+ },
+ "splash/Jinx.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg",
+  "zh_TW": "吉茵珂絲"
+ },
+ "splash/Ahri.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg",
+  "zh_TW": "阿璃"
+ },
+ "splash/Leona.jpg": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_0.jpg",
+  "zh_TW": "雷歐娜"
+ },
+ "spell/SummonerFlash.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/spell/SummonerFlash.png",
+  "zh_TW": "閃現"
+ },
+ "spell/SummonerTeleport.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/spell/SummonerTeleport.png",
+  "zh_TW": "傳送"
+ },
+ "spell/SummonerSmite.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/spell/SummonerSmite.png",
+  "zh_TW": "重擊"
+ },
+ "spell/SummonerDot.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/spell/SummonerDot.png",
+  "zh_TW": "點燃"
+ },
+ "spell/SummonerHaste.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/spell/SummonerHaste.png",
+  "zh_TW": "鬼步"
+ },
+ "spell/SummonerHeal.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/spell/SummonerHeal.png",
+  "zh_TW": "治療"
+ },
+ "item/doran-blade.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/1055.png",
+  "zh_TW": "多蘭之劍"
+ },
+ "item/doran-shield.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/1054.png",
+  "zh_TW": "多蘭之盾"
+ },
+ "item/boots.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/1001.png",
+  "zh_TW": "鞋子"
+ },
+ "item/berserker-greaves.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/3006.png",
+  "zh_TW": "狂戰士護脛"
+ },
+ "item/health-potion.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/2003.png",
+  "zh_TW": "生命藥水"
+ },
+ "item/control-ward.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/2055.png",
+  "zh_TW": "控域守衛"
+ },
+ "item/stealth-ward.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/3340.png",
+  "zh_TW": "潛行守衛"
+ },
+ "item/oracle-lens.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/3364.png",
+  "zh_TW": "先知透視鏡"
+ },
+ "item/farsight.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/3363.png",
+  "zh_TW": "鷹眼晶球"
+ },
+ "item/long-sword.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/1036.png",
+  "zh_TW": "長劍"
+ },
+ "item/vampiric-scepter.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/1053.png",
+  "zh_TW": "吸血鬼權杖"
+ },
+ "item/botrk.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/item/3153.png",
+  "zh_TW": "殞落王者之劍"
+ },
+ "rune/Domination.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7200_Domination.png",
+  "zh_TW": "征服"
+ },
+ "rune/Inspiration.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7203_Whimsy.png",
+  "zh_TW": "啟示"
+ },
+ "rune/Precision.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7201_Precision.png",
+  "zh_TW": "精準"
+ },
+ "rune/Resolve.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7204_Resolve.png",
+  "zh_TW": "意志"
+ },
+ "rune/Sorcery.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/7202_Sorcery.png",
+  "zh_TW": "巫術"
+ },
+ "map/summoners-rift.png": {
+  "url": "https://ddragon.leagueoflegends.com/cdn/16.22.1/img/map/map11.png",
+  "zh_TW": "召喚峽谷"
+ }
+}

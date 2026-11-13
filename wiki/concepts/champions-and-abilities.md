@@ -14,7 +14,7 @@ related: [draft/choosing-champions.md, draft/runes-and-spells.md]
 ## 召喚師技能（Summoner Spells）
 - 每位英雄另外攜帶兩個 **召喚師技能**，預設以 **D、F** 鍵施放。（S1）
 - 常用：**閃現**（Flash）、**傳送**（Teleport）、**重擊**（Smite，打野必帶）、**點燃**（Ignite）。（S1、S3、S5）
-- 帳號等級 1 即解鎖 **鬼步**（Ghost）與 **治癒**（Heal）。（S1）
+- 帳號等級 1 即解鎖 **鬼步**（Ghost）與 **治療**（Heal）。（S1）
 
 ## 來源
 - [S1](../sources/S01-official-how-to-play.md)

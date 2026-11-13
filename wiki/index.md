@@ -31,4 +31,4 @@ title: 英雄聯盟新手 Wiki 索引
 
 ## 參考
 - [術語中英對照](glossary.md)
-- 來源：[S1](sources/S01-official-how-to-play.md)、[S2](sources/S02-official-patch-26-1.md)、[S3](sources/S03-wiki-champion-select.md)、[S4](sources/S04-wiki-item.md)、[S5](sources/S05-wiki-position.md)、[S6](sources/S06-wiki-champion-classes.md)、[S7](sources/S07-wiki-minion.md)、[S8](sources/S08-wiki-ward.md)、[S9](sources/S09-dodgegg-beginner-champions.md)、[S10](sources/S10-wiki-rune.md)
+- 來源：[S1](sources/S01-official-how-to-play.md)、[S2](sources/S02-official-patch-26-1.md)、[S3](sources/S03-wiki-champion-select.md)、[S4](sources/S04-wiki-item.md)、[S5](sources/S05-wiki-position.md)、[S6](sources/S06-wiki-champion-classes.md)、[S7](sources/S07-wiki-minion.md)、[S8](sources/S08-wiki-ward.md)、[S9](sources/S09-dodgegg-beginner-champions.md)、[S10](sources/S10-wiki-rune.md)、[S11](sources/S11-ddragon.md)
